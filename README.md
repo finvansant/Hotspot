@@ -21,4 +21,4 @@ dependencies
 authors
 ========
 
-It was built by Findlay Parke and Parker Lawrence in April 2015. 
+Built by Findlay Parke and Parker Lawrence in April 2015. 
