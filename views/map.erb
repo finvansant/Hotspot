@@ -1,0 +1,71 @@
+<div class="sidebar">
+  <div class="logo-box"><img src="../images/hotspot_top_block.png"></div>
+  <div class="location-wrapper">
+    <% sorted_locations = @locations.sort_by{|x| x.count}.reverse %>
+    <% sorted_locations.each_with_index do |location, index| %>
+      <div class="location-box" onclick="myClick(<%= index %>);" onmouseover="" style="cursor: pointer;">
+        <p class="align-left">
+        <% location_name = location.name.split.map{|i|i.capitalize}.join(' ') %>
+        <%= location_name[0..[34,location_name.size].min] %>
+        </p>
+        <p class="align-right"><%= location.count %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="made-by">
+      made by <a href="https://twitter.com/noblemachine" title="Findlay">findlay</a> + <a href="http://www.hereisahand.com" title="Parker">parker</a>
+  </div>
+</div>
+<div id="logo"><img src="images/test.png"></div>
+<div id="map-canvas"></div>
+<script>
+  var markers = [];
+  function initialize() {
+    var myLatlng = new google.maps.LatLng(40.727244, -73.984047);
+    var mapOptions = {
+      zoom: 12,
+      center: myLatlng,
+      disableDefaultUI: true,
+      panControl: false,
+      zoomControl: true,
+      mapTypeControl: false,
+      scaleControl: true,
+      streetViewControl: false,
+      overviewMapControl: true
+    };
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var latitude = position.coords.latitude;
+        var longitude = position.coords.longitude;
+        var geolocpoint = new google.maps.LatLng(latitude, longitude);
+        map.setCenter(geolocpoint);
+      });
+    }
+    var locations = <%= Location.list(@locations) %>;
+    var infowindow = new google.maps.InfoWindow();
+    var images = ["images/small_diamond.png","images/diamondz.png"];
+    var marker, i;
+    for (i = 0; i < locations.length; i++) {
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map,
+        icon: images[Math.min(locations[i][3],2)-1]
+      });
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+      google.maps.event.addListener(map, "click", function(event) {
+          infowindow.close();
+      });
+      markers.push(marker);
+    }
+  }
+  function myClick(id){
+   google.maps.event.trigger(markers[id], 'click');
+  }
+</script>

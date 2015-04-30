@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="shortcut icon" type="public/image/x-icon" href="favicon.ico"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>hotspot</title>
+    <style>
+      html, body, 
+        #map-canvas {
+        /*height: 100%;*/
+        margin: 0px;
+        padding: 0px;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 1;
+      }
+      #logo {
+       position: absolute;
+       right: 60px;
+       bottom: 16px;
+       z-index: 2;
+      }
+      .sidebar {
+        height: 94vh;
+        margin-top: 3vh;
+        margin-bottom: 3vh;
+        width: 350px;
+        margin-left: 10px;
+        position: absolute;
+        vertical-align: left;
+        z-index: 3;
+        background-color: gray;
+        opacity: 0.9;
+        border-radius: 25px;
+      }
+      .pop-out {
+        font-family: 'Raleway', sans-serif;
+        color: black;
+        
+      }
+      .post-wrap {
+        width: 320px;
+        color: black;
+        display: block;
+        /*border-style: solid;*/
+      }
+      .post-thumb {
+        margin-top: 5px;
+        display: block;
+        border-style: solid;
+        border-width: 4px;
+        border-radius: 2px;
+        border
+      }
+      .user {
+        font-family: 'Raleway', sans-serif;
+        font-weight: bold;
+        /*display: block;*/
+        /*border-style: solid;*/
+      }
+
+      .logo-box {
+        position: absolute;
+        width: 100%;
+        color: white;
+        padding: 5px;
+        margin-left: 30px;
+        margin-bottom: 20px;
+        opacity: 100;
+        z-index: 4;
+      }
+
+      .location-wrapper {
+        margin-top: 110px;
+        height: 80%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+      }
+
+      div.location-box {
+        width: 98%;
+        color: white;
+        height: 6vh;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 3px;
+        /*position: relative;
+        z-index: 4;*/
+        font-family: 'Raleway', sans-serif;
+        background-image: url("/public/images/box.jpg");
+      }
+
+      div.location-box .inner-left {
+        width: 77%;
+        margin-left: 3%;
+        display: inline-block;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      div.location-box .inner-right {
+        width: 15%;
+        margin-right: 5%;
+        text-align: right;
+        display: inline-block;
+        float: right;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      div.location-box:hover {
+        background-image: url("public/images/box-hover.jpg");
+      }
+
+      .made-by ul {
+        font:normal 14px 'Raleway', sans-serif;
+        margin-left: 13%;
+        margin-top: 3%;
+      }
+      .made-by li, a {
+        display:inline-block;
+        text-align:center;
+      }
+      .made-by li, a {
+        text-decoration:none;
+        color:black;
+      }
+      .made-by a:hover {
+        color: #333;
+      }
+      .made-by a:active {
+        color: white;
+      }
+
+    </style>
+  </head>
+  
+  <body>
+
+    <div class="sidebar">
+
+      <div class="logo-box"><img src="public/images/hotspot_top_block.png"></div>
+
+      <div class="location-wrapper">
+      
+        <div class="location-box" onclick="myClick(0);">
+          <div class="inner-left">Lexington Battle Green asdfkljh asdlkfjh</div>
+          <div class="inner-right">10</div>
+        </div>
+        
+        <div class="location-box">
+          <div class="inner-left">Lexington Battle Green</div>
+          <div class="inner-right">10</div>
+        </div>
+        
+        <div class="location-box">
+          <div class="inner-left">Lexington Battle Green</div>
+          <div class="inner-right">10</div>
+        </div>
+
+        <div class="location-box">
+          <div class="inner-left">Lexington Battle Green</div>
+          <div class="inner-right">10</div>
+        </div>
+
+        <div class="location-box">
+          <div class="inner-left">Lexington Battle Green</div>
+          <div class="inner-right">10</div>
+        </div>
+
+        <div class="location-box">
+          <div class="inner-left">Lexington Battle Green</div>
+          <div class="inner-right">10</div>
+        </div>
+
+        <div class="location-box">
+          <div class="inner-left">Lexington Battle Green</div>
+          <div class="inner-right">10</div>
+        </div>
+
+        <div class="location-box">
+          <div class="inner-left">Lexington Battle Green</div>
+          <div class="inner-right">10</div>
+        </div>
+
+        <div class="location-box">
+          <div class="inner-left">Lexington Battle Green</div>
+          <div class="inner-right">10</div>
+        </div>
+
+        <div class="location-box">
+          <div class="inner-left">Lexington Battle Green</div>
+          <div class="inner-right">10</div>
+        </div>
+
+        <div class="location-box">
+          <div class="inner-left">Lexington Battle Green</div>
+          <div class="inner-right">10</div>
+        </div>
+
+        <div class="location-box">
+          <div class="inner-left">Lexington Battle Green</div>
+          <div class="inner-right">10</div>
+        </div>
+
+        <div class="location-box">
+          <div class="inner-left">Lexington Battle Green</div>
+          <div class="inner-right">10</div>
+        </div>
+
+        <div class="location-box">
+          <div class="inner-left">Lexington Battle Green</div>
+          <div class="inner-right">10</div>
+        </div>
+
+        <div class="location-box">
+          <div class="inner-left">Lexington Battle Green</div>
+          <div class="inner-right">10</div>
+        </div>
+      
+      </div>
+
+      <div class="made-by">
+          <ul>
+            <li>made by</li>
+            <li><a href="https://twitter.com/noblemachine" title="Findlay">findlay</a></li>
+            <li>+</li>
+            <li><a href="http://www.hereisahand.com" title="Parker">parker</a></li>
+          </ul>
+      </div>
+    </div>
+
+    <div id="logo"><img src="public/images/test.png"></div>
+
+    <div id="map-canvas"></div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+    <script>
+      var markers = [];
+      function initialize() {
+        var myLatlng = new google.maps.LatLng(40.727231, -73.984195);
+        var mapOptions = {
+          zoom: 8,
+          center: myLatlng,
+          disableDefaultUI: true,
+          panControl: false,
+          zoomControl: true,
+          mapTypeControl: false,
+          scaleControl: true,
+          streetViewControl: false,
+          overviewMapControl: true
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        var locations = [['<div class="loc-name pop-out"><a href="http://www.townsmanboston.com/" style="color:#4169E1; font-size: 25px;">Townsman</a></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/11193172_797940060291699_316353012_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>Deep clean went well tonight. Even for @frankie_coppola92. Well, until this.</p></div></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/11137786_887471761311465_373670055_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>So kimchi gnocchi. That&apos;s gonna be a thing.</p></div></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/11189552_1655358991350975_41317567_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>.@megallysa workin&apos; out that new rhubarb and pistachio cake plate up. #skillz #purty</p></div></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/11137889_960036017362334_51776841_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>Can&apos;t wait to cook with the lovely, gifted and goofy @aprilbloomfield again next month. Tickets go on sale tomorrow for our dinner celebrating her release of #agirlandhergreens, @townsmanboston on 5/12. xox❤️❤️</p></div></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/11191401_464025210419709_479086093_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>Dear Krang, Lord of Mise en Place, we hold these 15 minutes to be reserved-for us- to refuel, recharge, reassess and to dutifully embrace the ass-kicking we are about to receive, at the hands of our patron saint- The Guest, on this 24th day of April, 2015. Amen. #familymeal</p></div></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/11191192_1650632028499533_394426429_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>And sometimes you cook for your heroes. Thanks for coming in for dinner, @danielboulud!</p></div></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/11138044_434830516675041_1342502989_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>Who remembers &quot;Muddy Buddies&quot; from growing up? Well, we&apos;ve re-created them as a late night @townsmanboston bar snack. This time however, chicharrones are coated in 80% dark chocolate and melted peanut butter, then coated with confectioner&apos;s sugar.</p></div></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/11142144_812753248810043_1167802118_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>Fermented garlic brined striped bass collar, fava, rhubarb chow chow, chervil @townsmanboston.</p></div></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/11084881_919846028035599_1950299910_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>Today&apos;s stage is a keeper.</p></div></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/11111318_1582755868676050_1731567381_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>And away we go....</p></div></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/11116932_480345548787366_641185128_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>Porc mosaïque.</p></div></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/11142889_380748492119791_1457945432_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>Veggie burger? Yup. We do that. Spicy black bean burger @townsmanboston. #classics #TownsmanLunch</p></div></div>', 42.352215, -71.059059, 0],['<div class="loc-name pop-out"><a href="http://lexingtonma.gov/" style="color:#4169E1; font-size: 25px;">Lexington Battle Green</a></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/11117135_1400708030251541_640181483_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>240 years ago today, on a small swath of grass in the middle of Lexington, Massachusetts, roughly 500 militiamen from surrounding communities, decided to take a stand against British imperial rule and engaged gunfire with three companies of the King&apos;s troops, in the early morning hours. These were the first military engagements of what would become the American Revolutionary War- a dissension of 13 of the mother country&apos;s colonies on this side of the Atlantic, fighting for freedom and a voice. Today is a good day to visit this rock, which reminds us that sometimes, you have to have to fight for what you believe in. And that the successes and liberation of the many, can be won by the hands of only a brave few.</p></div></div>', 42.449444, -71.231389, 1],['<div class="loc-name pop-out"><a href="http://en.wikipedia.org/wiki/7-Eleven" style="color:#4169E1; font-size: 25px;">7-Eleven</a></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/11142309_643030099162325_428460971_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>Straight lie, if I were to tell you I wasn&apos;t thinking about it right now. #eeniemeeniemineymoe #thisonesgonnaleaveamark #howmanyhours #dangerzone</p></div></div>', 42.371794, -71.157527, 2],['<div class="loc-name pop-out"><a href="http://aldenharlow.com/" style="color:#4169E1; font-size: 25px;">Alden &amp; Harlow</a></div><div class="post-wrap pop-out"><div class="post-thumb pop-out"><img src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/11123752_1638787583023884_1575625526_n.jpg"></div><div class="user pop-out"><p>user: matthewjennings</p></div><div class="post-caption pop-out"><p>April 30th, join this troupe of dumpling fanatics, to celebrate the release of @jennlouis&apos; new book, @aldenharlow! See you there! #dumplings #pastabyhand</p></div></div>', 42.373455, -71.121681, 3]];
+        var infowindow = new google.maps.InfoWindow();
+        var image = "public/images/diamondz.png";
+        var marker, i;
+        for (i = 0; i < 1; i++) {  
+          marker = new google.maps.Marker({
+            position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+            map: map,
+            icon: image
+          });
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+              infowindow.setContent(locations[i][0]);
+              infowindow.open(map, marker);
+            }
+          })(marker, i));
+          google.maps.event.addListener(map, "click", function(event) {
+              infowindow.close();
+          });
+          markers.push(marker);
+        }
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+      function myClick(id){
+        google.maps.event.trigger(markers[id], 'click');
+      }
+    </script>
+  </body>
+</html>

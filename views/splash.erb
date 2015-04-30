@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700,900' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css">
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  <meta charset="UTF-8">
+  <title>_hotspot_</title>
+  <style>
+    html { 
+      background: url(<%= ["\"images/splash1.png\"","\"images/splash2.png\"","\"images/splash3.png\"","\"images/splash4.png\"","\"images/splash5.png\""][rand(0..4)] %>) no-repeat center center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    #clicker-wrapper {
+    position: absolute;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 60vh;
+    width: 200px;
+    vertical-align: middle;
+    left:0;
+    right:0;
+    opacity: 0.85;
+    }
+
+    #OR {
+    text-decoration: none;
+    margin-top: 5.5px;
+    margin-bottom: 7px;
+    text-align: center;
+    color: white;
+    }
+
+    #instagram {
+    display: block;
+    width: 190px;
+    background: #ECF0F1;
+    padding: 10px 12px;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    border-radius: 5px;
+    }
+
+    #instagram a {
+      text-decoration: none;
+    }
+
+    #instagram:hover {
+      background: #E0E0E0;
+      color: white;
+      transition: all .3s;
+      cursor: pointer;
+    }
+
+    *{
+    position: relative;
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    color:inherit;
+    }
+    
+    .float-right{
+    float: right;
+    }
+
+    .fa{
+    font-size: 14px;
+    line-height: 22px !important;
+    }
+
+    dropdown{
+    display: inline-block;
+    /*margin: 33.90% 43.5%;*/ 
+    } 
+
+    dropdown label, dropdown ul li{
+    display: block;
+    width: 188px;
+    background: #ECF0F1;
+    padding: 9px 15px;
+    }
+
+    dropdown label, dropdown ul li:last-child{
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px; 
+    }
+
+    dropdown label:hover, dropdown ul li:hover{ /*when hovering over*/
+    background: #E0E0E0; /*backrgound color*/
+    color: white; /*color of letters*/
+    cursor: pointer;
+    }
+
+    dropdown label{   /*color of menu word + tab lip + icon (non-hover)*/
+    color: black; /*menu word + icon*/
+    /*border-left: 4px solid white; /*color of lip*/
+    border-radius: 0 5px 0 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    position: relative;
+    z-index: 2;
+    } 
+
+    dropdown input{
+    display: none;
+    }
+
+    dropdown input ~ ul{
+    position: relative;
+    visibility: hidden;
+    opacity: 0;
+    top: -20px;
+    z-index: 1;
+    }
+
+    dropdown input:checked + label{
+    background: white; /*color of label when dropped*/
+    color: black;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px; 
+    }
+
+    dropdown input:checked ~ ul{
+    visibility: visible;
+    opacity: 1;
+    top: 0;
+    }
+
+    $colors: #E74C3C, #0072B5, #2C3E50;
+
+    @for $i from 1 through length($colors) {
+    dropdown ul li:nth-child(#{$i}) {
+    border-left: 4px solid nth($colors, $i);
+    
+    .fa{
+      color: nth($colors, $i);
+    }
+    
+    &:hover {
+        background: nth($colors, $i);
+        color: white;
+      .fa{
+        color: white; 
+      }
+    }
+  }
+}
+
+    .animate{
+      -webkit-transition: all .3s;
+      -moz-transition: all .3s;
+      -ms-transition: all .3s;
+      -ms-transition: all .3s;
+      transition: all .3s;  
+      backface-visibility:hidden;
+      -webkit-backface-visibility:hidden; /* Chrome and Safari */
+      -moz-backface-visibility:hidden; /* Firefox */
+      -ms-backface-visibility:hidden; /* Internet Explorer */
+    }
+
+    .animate a {
+      text-decoration: none;
+    }
+
+  </style>
+
+
+</head>
+<body>
+ <div id="background"></div>
+
+ <div id="clicker-wrapper">
+   <div id="instagram"><a href="/auth/instagram/connect">LOG INTO INSTAGRAM</a></div>
+   <div id="OR">OR</div>
+   <dropdown>
+      <input id="toggle1" type="checkbox">
+      <label for="toggle1" class="animate">CHOOSE A GROUP<i class="fa fa-bars float-right"></i></label>
+      <ul class="animate">
+        <li class="animate"><a href="/main/food">FOOD</a><i class="fa fa-cutlery float-right"></i></li>
+        <li class="animate"><a href="/main/sports">SPORTS</a><i class="fa fa-futbol-o float-right"></i></li>
+        <li class="animate"><a href="/main/fashion">FASHION</a><i class="fa fa-camera-retro float-right"></i></li>
+        <li class="animate"><a href="/main/music">MUSIC</a><i class="fa fa-music float-right"></i></li>
+      </ul>
+    </dropdown>
+ </div>
+
+</body>
+</html>
+
