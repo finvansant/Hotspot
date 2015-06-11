@@ -24,3 +24,8 @@ authors
 ========
 
 Built by Findlay Parke and Parker Lawrence in April 2015. 
+
+license
+========
+
+Hotspot is MIT Licensed. See LICENSE for details.
