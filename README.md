@@ -7,7 +7,7 @@ Hotspot is a webapp that visualizes Instagram data so users can browse trending 
 
 ![alt tag](https://raw.github.com/finvansant/hotspot_/master/hs_pres/images/slide5.png)
 
-![alt tag](https://raw.github.com/finvansant/hotspot_/master/hs_pres/images/display.png)
+![alt tag](https://raw.githubusercontent.com/parkeristyping/HotSpot/master/hotspot%20screenshot%202.png)
 
 ![alt tag](https://raw.github.com/finvansant/hotspot_/master/hs_pres/images/slide9.png)
 
